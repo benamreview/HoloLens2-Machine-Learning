@@ -39,7 +39,7 @@ public sealed class CustomNetworkModel
     {
         // Ensure the input and output fields are bound to the correct
         // layer names in the onnx model
-        binding.Bind("input", input.features);
+        binding.Bind("input_2", input.features);
         var result = await session.EvaluateAsync(binding, "0");
         var output = new CustomNetworkOutput();
         output.prediction = result.Outputs["Identity"] as TensorFloat;
